@@ -6,7 +6,7 @@ A web-based system where users can register, take skill-based quizzes (MCQs), an
 
 ## 🔗 Live Demo
 
-
+Live Link - https://skill-assessment-portal-mu.vercel.app/
 ---
 
 ## 🚀 Features
