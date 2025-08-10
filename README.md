@@ -1,68 +1,61 @@
-# 🐄 Milking Tracker with Music 🎵
+# 🧑‍💻 Skill Assessment Portal
 
-A fullstack web application that helps dairy farmers track milking sessions while playing relaxing music to enhance milk yield. Built with **React + Next.js** on the frontend and **Node.js + Express + MongoDB/MySQL** on the backend.
+A web-based system where users can register, take skill-based quizzes (MCQs), and view performance reports. Admins can manage users, skill categories, questions, and generate detailed reports.
 
 ---
 
 ## 🔗 Live Demo
 
-- 🔹 Frontend: https://milking-tracker-y9g4.vercel.app/
-- 🔹 Backend API: https://milking-tracker-zye2.onrender.com/
 
 ---
 
 ## 🚀 Features
 
-### 🏠 Landing Page
-- "Start Milking" button to initiate session
-- Link to view Milking History
+### 👥 User Management
+- User registration and login with JWT-based authentication
+- Role-based access control (`admin` and `user`)
 
-### ⏱️ Milking Session
-- Music plays automatically from a playlist
-- Timer starts on session begin
-- Controls: Pause, Resume, Stop
-- Milk quantity is input at end of session
+### 📝 Skill & Quiz Management
+- Admin can add skill categories and quiz questions
+- Users can select skills and take quizzes
+- Save quiz attempts with selected answers and scores
 
-### 📜 History Page
-- Displays session data in table format:
-  - Date | Start Time | End Time | Duration | Milk Collected (in Litres)
-- Data fetched from API
+### 📊 Performance Reports
+- User-wise quiz performance reports
+- Skill gap identification based on average scores
+- Time-based reports (filter by week/month)
+- Admin dashboard with aggregate user and skill data
+
+### 🔒 Secure APIs
+- JWT token verification on all protected routes
+- Pagination and filtering support in APIs
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Frontend      | Backend          | Database      |
-|---------------|------------------|-------------- |
-| React         | Node.js + Express| MongoDB       |
+| Frontend            | Backend           | Database         |
+|---------------------|-------------------|------------------|
+| React + React Router| Node.js + Express | MySQL            |
 
 ---
 
-## 🧪 API Endpoints
+## Usage Notes
 
-### `GET /session`
-Returns all stored sessions.
+- All protected routes require the `Authorization: Bearer <token>` header with a valid JWT.
+- Admin users have access to additional endpoints to manage users, skills, and questions.
+- Frontend manages user sessions and stores JWT tokens in localStorage.
 
-``` json
-[
-  {
-    "id": 1,
-    "start_time": "2025-03-10T14:00:00Z",
-    "end_time": "2025-03-10T14:15:00Z",
-    "duration": 900,
-    "milk_quantity": 5.2
-  }
-]
+---
 
-### `POST /session`
-Creates a new session.
+## Running Locally
 
-```json
-{
-  "start_time": "2025-03-10T14:00:00Z",
-  "end_time": "2025-03-10T14:15:00Z",
-  "duration": 900,
-  "milk_quantity": 5.2
-}
+1. Clone the repo
+2. Setup MySQL database
+3. Configure `.env` with database and JWT secret info
+4. Run backend server
+5. Run frontend React app
+
+---
 
 
