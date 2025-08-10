@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { logout } from "../api/userApi";
-import "../styles/Sidebar.css";
+import "../styles/SideBar.css";
 
 export default function Sidebar({ role }) {
   const navigate = useNavigate();
